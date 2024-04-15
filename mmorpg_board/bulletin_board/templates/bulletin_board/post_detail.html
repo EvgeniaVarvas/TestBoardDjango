@@ -1,8 +1,32 @@
 {% extends 'base2.html' %}
 
+
 {% block content %}
-    {{ post.title }}
-    {{ post.text }}
-    {{ post.content|safe}}
-    {{ post.category }}
+    <div class="post_detail">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text }}</p>
+        <div class="content_post">{{ post.content|safe }}</div>
+        <p>Category: {{ post.category }}</p>
+        
+        <div class="responses">
+            <h2>Responses:</h2>
+            {% for response in post.responses.all %}
+                <p>{{ response.text }}</p>
+                <p>Comment Author: {{ response.author }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <style>
+        /* Ваши стили здесь */
+        .post {
+            /* стили для поста */
+        }
+        .content {
+            /* стили для контента поста */
+        }
+        .responses {
+            /* стили для блока с ответами */
+        }
+    </style>
 {% endblock %}

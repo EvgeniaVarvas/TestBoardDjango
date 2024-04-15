@@ -33,7 +33,7 @@
         </div>
     </section>
     <div class="post-filter container">
-        <ul class="filter-list">
+        <!-- <ul class="filter-list">
             <li class="filter-item"><a href="#">Все</a></li>
             <li class="filter-item"><a href="#">Танки</a></li>
             <li class="filter-item"><a href="#">Хилы</a></li>
@@ -45,8 +45,8 @@
             <li class="filter-item"><a href="#">Кожевники</a></li>
             <li class="filter-item"><a href="#">Зельевары</a></li>
             <li class="filter-item"><a href="#">Мастера заклинаний</a></li>
-        </ul>
-        <!-- <span class="filter-item active-filter" data-filters="all">Все</span>
+        </ul> -->
+        <span class="filter-item active-filter" data-filters="all">Все</span>
         <span class="filter-item" data-filters="tanks">Танки</span>
         <span class="filter-item" data-filters="healers">Хилы</span>
         <span class="filter-item" data-filters="dd">ДД</span>
@@ -56,11 +56,14 @@
         <span class="filter-item" data-filters="blacksmiths">Кузнецы</span>
         <span class="filter-item" data-filters="letherworkers">Кожевники</span>
         <span class="filter-item" data-filters="alchemists">Зельевары</span>
-        <span class="filter-item" data-filters="spellcasters">Мастера заклинаний</span> -->
+        <span class="filter-item" data-filters="spellcasters">Мастера заклинаний</span>
     </div>
     
     {% block content %}
     {% endblock %}
     {% include 'modal.html' %}
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

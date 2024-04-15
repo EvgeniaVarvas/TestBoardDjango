@@ -53,6 +53,10 @@ section{
     z-index: 200;
 }
 
+.header.shadow{
+    box-shadow: 0 0 4px rgba(14, 55, 63, 0.15);
+}
+
 .nav{
     display: flex;
     align-items: center;
@@ -116,10 +120,19 @@ section{
 }
 
 .filter-item {
-    display: inline-block;
+    font-size: .9rem;
+    font-weight: 500;
+    cursor: pointer;
 }
 
-.filter-item a {
+.active-filter {
+    background-color: var(--second-color);
+    color: var(--bg-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* .filter-item a {
     padding: 4px 2px;
     font-size: .9rem;
     font-weight: 500;
@@ -137,10 +150,10 @@ section{
 }
 
 .filter-item:not(:last-child) {
-    margin-right: 1.5rem;
-}
+    margin-right: 1.5rem; 
+}*/
 /* Posts */
-.post-box {
+.post.container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ширина столбцов автоматически подстраивается */
     grid-gap: 1.5rem; /* Промежуток между столбцами */
@@ -200,6 +213,8 @@ section{
 }
 
 
+
+
 /*Popup*/
 
 .popup {
@@ -251,4 +266,19 @@ section{
 .popup-text {
     font-size: 1.5rem;
     
+}
+
+/*Post detail*/
+.post_detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 14px hsl(355deg 5% 15% / 10%);
+    border-radius: 0.5rem;
+
 }

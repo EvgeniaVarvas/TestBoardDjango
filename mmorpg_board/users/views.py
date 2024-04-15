@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model, authenticate
 from django.contrib.auth.views import LoginView
 from django.core.exceptions import ValidationError
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.http import urlsafe_base64_decode
 from django.views import View
@@ -15,6 +16,9 @@ User = get_user_model()
 
 class MyLoginView(LoginView):
     form_class = AuthenticationForm
+
+    def post(self, request):
+        return {'status': 'ok'}
     
 
 
