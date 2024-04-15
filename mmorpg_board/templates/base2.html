@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMORPG Board</title>
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+    <!-- icons -->
+    <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
+</head>
+<body>
+   
+    <!-- Header -->
+    <header class="header">
+        <!-- nav -->
+        <div class="nav container">
+            <a href="{% url 'post' %}" class="logo">MMORPG <span>Board</span></a>
+            <!-- logo btn -->
+            <!-- <a href="{% url 'login' %}" class="login">LOGIN</a> -->
+            <a href="#popup" class="login popup-login">LOGIN</a>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="home-text container">
+            <h2 class="home-title">MMORPG Board</h2>
+            <span class="home-subtitle">Welcome to MMORPG Board</span>
+        </div>
+    </section>
+    <div class="post-filter container">
+        <ul class="filter-list">
+            <li class="filter-item"><a href="#">Все</a></li>
+            <li class="filter-item"><a href="#">Танки</a></li>
+            <li class="filter-item"><a href="#">Хилы</a></li>
+            <li class="filter-item"><a href="#">ДД</a></li>
+            <li class="filter-item"><a href="#">Торговцы</a></li>
+            <li class="filter-item"><a href="#">Гильдмастеры</a></li>
+            <li class="filter-item"><a href="#">Квестгиверы</a></li>
+            <li class="filter-item"><a href="#">Кузнецы</a></li>
+            <li class="filter-item"><a href="#">Кожевники</a></li>
+            <li class="filter-item"><a href="#">Зельевары</a></li>
+            <li class="filter-item"><a href="#">Мастера заклинаний</a></li>
+        </ul>
+        <!-- <span class="filter-item active-filter" data-filters="all">Все</span>
+        <span class="filter-item" data-filters="tanks">Танки</span>
+        <span class="filter-item" data-filters="healers">Хилы</span>
+        <span class="filter-item" data-filters="dd">ДД</span>
+        <span class="filter-item" data-filters="traders">Торговцы</span>
+        <span class="filter-item" data-filters="guildmasters">Гильдмастеры</span>
+        <span class="filter-item" data-filters="questgivers">Квестгиверы</span>
+        <span class="filter-item" data-filters="blacksmiths">Кузнецы</span>
+        <span class="filter-item" data-filters="letherworkers">Кожевники</span>
+        <span class="filter-item" data-filters="alchemists">Зельевары</span>
+        <span class="filter-item" data-filters="spellcasters">Мастера заклинаний</span> -->
+    </div>
+    
+    {% block content %}
+    
+    {% endblock %}
+ {% include 'modal.html' %}
+</body>
+</html>

@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    scroll-padding-top: 2rem;
+    box-sizing: border-box;
+}
+
+:root{
+    --container_color: #1a1e21 ;
+    --second-color: #fd8f44;
+    --text-color: #172317;
+    --bg-color: #fff;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button{
+    font: inherit;
+}
+
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100%;
+    line-height: 1.5;
+}
+/* Header */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+
+}
+
+.nav{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    position: relative;
+}
+
+.logo{
+    font-weight: 600;
+    color: var(--text-color);
+    padding-left: 10px;
+}
+
+.logo span{
+    font-weight: 600;
+    color: var(--second-color);
+}
+
+
+.header__list {
+    display: flex;
+    align-items: center;
+    column-gap: 4rem;
+    margin-left: -2rem; /* компенсация отступа слева */
+}
+
+.header__list-item:first-child {
+    margin-left: 0; /* сброс отступа для первого элемента */
+}
+
+.nav ul li a{
+    color: var(--text-color);
+}
+
+.profile svg {
+    fill: white; 
+    transform: translateY(11%); 
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--second-color);
+    color: var(--bg-color);
+    font-size: 1.5rem
+}
+
+.profile:hover {
+    background: hsl(24, 91%, 68%);
+    border: 3px solid var(--second-color);
+    transition: .3s;
+}
+
+
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    border-radius: 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, box-shadow 0.5s; /* Добавляем transition для box-shadow */
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5); /* Создаем тень только снизу */
+}
+
+.sub-menu-wrap.open-class{
+    max-height: 400px;
+    border: 1px solid hsl(24, 91%, 68%);;
+}
+
+
+.sub-menu{
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: center; /* Выравниваем по центру по горизонтали */
+    align-items: center; /* Выравниваем по центру по вертикали */
+}
+
+
+
+.user-pic {
+    align-self: flex-start; /* Выравниваем по верху внутри flexbox */
+    margin-bottom: 10px; /* Добавляем небольшой отступ снизу, чтобы отделить .user-pic от следующего элемента */
+}
+
+
+.user-info {
+    display: flex; /* Применяем flex-контейнер для .user-info */
+    flex-direction: column; /* Определяем направление главной оси */
+}
+
+.user-info h1,
+.user-info p {
+    margin: 0; /* Удаляем внешние отступы у заголовка и параграфов */
+}
+
+.user-info hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 5px 0 10px;
+}
+
+.user-info h1{
+    font-weight: 500;
+}
+
+.sub-menu-link{
+    display: flex;
+    /* align-items: center; */
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+
+.sub-menu-link p{
+    width: 100%; 
+}
+
+.sub-menu-link span{
+    font-size: 1.5rem;
+    /* margin-left: 5px; */
+}
+
+.sub-menu-link:hover span{
+    transform: translateX(5px);
+    transition: .2s;
+
+}
+
+.sub-menu-link:hover p{
+    font-weight: 600;
+
+}
+
+
+
+/* .user-pic{
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 35px;
+    border: 1px solid #000;
+} */
+
+.body__section {
+    max-width: 1068px; /* Изменяем максимальную ширину контейнера section */
+    margin: auto; /* Выравниваем section по центру */
+    padding: 20px; /* Добавляем отступы для содержимого section */
+}
+

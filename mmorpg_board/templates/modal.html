@@ -1,0 +1,19 @@
+<div id="popup" class="popup">
+    <div class="popup-body">
+        <div class="popup-content">
+            <a href="#header" class="popup-close">X</a>
+                <div class="popup-title">Lorem</div>
+                <div class="popup-text">
+                    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <a href="{% url 'password_reset' %}">Forgot password?</a>
+                </div>    
+        </div>
+    </div>  
+</div>
