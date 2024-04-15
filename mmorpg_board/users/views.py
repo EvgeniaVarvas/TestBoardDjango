@@ -15,6 +15,7 @@ User = get_user_model()
 
 class MyLoginView(LoginView):
     form_class = AuthenticationForm
+    
 
 
 class EmailVerification(View):

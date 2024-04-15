@@ -1,5 +1,8 @@
 {% extends 'base2.html' %}
 
 {% block content %}
-    
+    {{ post.title }}
+    {{ post.text }}
+    {{ post.content|safe}}
+    {{ post.category }}
 {% endblock %}
