@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.conf import settings
 
@@ -27,6 +28,10 @@ class Post(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+    
+    def get_absolute_url(self):
+        # Возвращаем URL-адрес для просмотра этого объекта Post
+        return reverse('post_detail', kwargs={'pk': self.pk})
 
 
 class Response(models.Model):

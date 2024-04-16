@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMORPG Board</title>
+    <title>{% block title %}MMORPG Board{% endblock %}</title>
     {% load static %}
     
     <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
     <!-- icons -->
-    <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
    
@@ -28,24 +28,12 @@
     </header>
     <section class="home" id="home">
         <div class="home-text container">
-            <h2 class="home-title">MMORPG Board</h2>
-            <span class="home-subtitle">Welcome to MMORPG Board</span>
+            <h2 class="home-title">{% block titlesection %}MMORPG Board{% endblock %}</h2>
+            <span class="home-subtitle">{% block subtitle %}Welcome to MMORPG Board{% endblock %}</span>
         </div>
     </section>
+    {% block category %}
     <div class="post-filter container">
-        <!-- <ul class="filter-list">
-            <li class="filter-item"><a href="#">Все</a></li>
-            <li class="filter-item"><a href="#">Танки</a></li>
-            <li class="filter-item"><a href="#">Хилы</a></li>
-            <li class="filter-item"><a href="#">ДД</a></li>
-            <li class="filter-item"><a href="#">Торговцы</a></li>
-            <li class="filter-item"><a href="#">Гильдмастеры</a></li>
-            <li class="filter-item"><a href="#">Квестгиверы</a></li>
-            <li class="filter-item"><a href="#">Кузнецы</a></li>
-            <li class="filter-item"><a href="#">Кожевники</a></li>
-            <li class="filter-item"><a href="#">Зельевары</a></li>
-            <li class="filter-item"><a href="#">Мастера заклинаний</a></li>
-        </ul> -->
         <span class="filter-item active-filter" data-filters="all">Все</span>
         <span class="filter-item" data-filters="tanks">Танки</span>
         <span class="filter-item" data-filters="healers">Хилы</span>
@@ -58,10 +46,25 @@
         <span class="filter-item" data-filters="alchemists">Зельевары</span>
         <span class="filter-item" data-filters="spellcasters">Мастера заклинаний</span>
     </div>
+    {% endblock %}
+
+  
     
     {% block content %}
     {% endblock %}
     {% include 'modal.html' %}
+    <!-- Footer -->
+   
+        <div class="footer container">
+            <p>&#169; MMORPG Board. All rights reserved.</p>
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-pinterest'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+     
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="{% static 'js/main.js' %}"></script>

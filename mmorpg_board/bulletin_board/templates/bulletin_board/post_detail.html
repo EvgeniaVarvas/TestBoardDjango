@@ -1,9 +1,34 @@
 {% extends 'base2.html' %}
 
+{% block title %} {{ post.title }} {% endblock %}
 
+
+{% block titlesection %}{{ post.title }}{% endblock %}
+
+{% block subtitle %}
+Publication date: {{ post.date|date }}
+{% endblock %}
 {% block content %}
-    <div class="post_detail">
-        <h1>{{ post.title }}</h1>
+{% block category %}
+{% endblock %}
+<section class="post container">
+    <div class="header-content post-container">
+        {{ post.text }}
+        <p>{{ post.content|safe }}</p>
+        <div class="profile post">     
+            <a class="profile-img" href="{#% url 'profile' post.author.id %#}">{{ post.author.username|first|upper }}</a>
+            <span class="profile-name">{{ post.author }}</span>     
+        </div>
+    </div>
+        
+</section>
+
+{% include 'bulletin_board/response.html' %}  
+
+{% endblock %}
+
+<!-- 
+<h1>{{ post.title }}</h1>
         <p>{{ post.text }}</p>
         <div class="content_post">{{ post.content|safe }}</div>
         <p>Category: {{ post.category }}</p>
@@ -15,18 +40,4 @@
                 <p>Comment Author: {{ response.author }}</p>
             {% endfor %}
         </div>
-    </div>
-
-    <style>
-        /* Ваши стили здесь */
-        .post {
-            /* стили для поста */
-        }
-        .content {
-            /* стили для контента поста */
-        }
-        .responses {
-            /* стили для блока с ответами */
-        }
-    </style>
-{% endblock %}
+    </div> -->

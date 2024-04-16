@@ -1,0 +1,8 @@
+<section class="response">
+    <h1 class="header-respone">Responses</h1>
+    <form  method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+       
+    </form>
+</section>
