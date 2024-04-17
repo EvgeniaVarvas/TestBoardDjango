@@ -21,7 +21,6 @@ class Post(models.Model):
 
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=64)
-    text = models.TextField()
     category = models.CharField(max_length=20, choices=TYPE)
     date = models.DateTimeField(auto_now_add=True)
     content = RichTextUploadingField(blank=True, null=True)

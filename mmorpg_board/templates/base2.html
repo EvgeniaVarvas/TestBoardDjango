@@ -19,11 +19,14 @@
             <a href="{% url 'post' %}" class="logo">MMORPG <span>Board</span></a>
             <!-- logo btn -->
             <!-- <a href="{% url 'login' %}" class="login">LOGIN</a> -->
-            {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}"  class="login popup-login">LOGOUT</a>
-            {% else %}
-            <a href="#popup" class="login popup-login">LOGIN</a>
-            {% endif %}
+            <div class="nav-menu">
+                {% if user.is_authenticated %}
+                <a href="{% url 'post_create' %}"  class="add-announcement-button"> Add announcement</a>
+                <a href="{% url 'logout' %}"  class="login popup-login">LOGOUT</a>
+                {% else %}
+                <a href="#popup" class="login popup-login">LOGIN</a>
+                {% endif %}
+            </div>
         </div>
     </header>
     <section class="home" id="home">

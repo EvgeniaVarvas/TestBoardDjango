@@ -16,7 +16,7 @@ Publication date: {{ post.date|date }}
         {{ post.text }}
         <p>{{ post.content|safe }}</p>
         <div class="profile post">     
-            <a class="profile-img" href="{#% url 'profile' post.author.id %#}">{{ post.author.username|first|upper }}</a>
+            <a class="profile-img" href="{% url 'user_post_list' username=post.author.username %}">{{ post.author.username|first|upper }}</a>
             <span class="profile-name">{{ post.author }}</span>     
         </div>
     </div>
